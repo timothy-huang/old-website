@@ -1,0 +1,23 @@
+.header {
+    padding: 5px 5px 1px 5px;
+}
+
+.spaced {
+    margin-left: 25px;
+}
+
+.big-name {
+    margin-top: 100px;
+    font-size: 70px;
+    text-align: center;
+}
+
+.descriptor {
+    margin-top: 50px;
+}
+
+.icons {
+    width:60px;
+    height:60px;
+    text-align: center;
+}
