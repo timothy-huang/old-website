@@ -10,7 +10,20 @@
     <script>
         $(document).ready(function(){
             $("#my-name").fadeIn(1200);
+            $("#animate1").click(function(){
+                $("#animate1").hide();
+                $("#my-name").animate({
+                    bottom: '90px'
+                }, 1000);
+                $("#below-name").animate({
+                    bottom: '90px'
+                }, 1500);
+                setTimeout(function(){$("#descriptor").fadeIn(1200)}, 3500);
+                setTimeout(function(){$("#linkedin").fadeIn(1200)}, 2000);
+                setTimeout(function(){$("#github").fadeIn(1200)}, 2500);
+            });
         });
+
     </script>
 </head>
 
@@ -36,10 +49,10 @@
     </nav>
 
     <div class="container">
-        <div class="row" style="margin-top: 125px">
+        <div class="row" style="margin-top: 215px;">
             <div class="col-3"></div>
             <div class="col-6 big-name">
-                <p id="my-name" style="display:none">
+                <p id="my-name" style="display:none; position: relative;">
                     Timothy Huang
                 </p>
             </div>
@@ -47,24 +60,32 @@
         </div>
         <div class="row">
             <div class="col-3"></div>
-            <div class="col-6 icons">
-                <a href="https://www.linkedin.com/in/timothy-h-3381b1109/" target="_blank">
-                    <img class="rounded-circle icons" src="/images/linkedinicon.png"
-                    alt="LinkedIn Icon"></a>
-                <a href="https://github.com/timothy-huang" target="_blank">
-                    <img class="rounded-circle icons" src="/images/25231.svg"
-                    alt="Github Icon"></a>
+            <div class="col-6" style="text-align: center">
+                <a href=# style="text-decoration: none" id="animate1"><img src="/images/three-dots.svg" style="width:30px; height:30px"></a>
             </div>
             <div class="col-3"></div>
         </div>
     </div>
-    <div class="descriptor container">
-        <div class="row">
+    <div class="container" style="position:relative" id="below-name">
+        <div class="row centered" style="height:60px;">
+            <div class="col-5"></div>
+            <div class="col-1">
+                <a href="https://www.linkedin.com/in/timothy-h-3381b1109/" target="_blank" style="display: none" id="linkedin">
+                    <img class="rounded-circle icons" src="/images/linkedinicon.png"
+                    alt="LinkedIn Icon"></a>
+            </div>
+            <div class="col-1">
+                <a href="https://github.com/timothy-huang" target="_blank" style="display: none" id="github">
+                    <img class="rounded-circle icons" src="/images/25231.svg"
+                    alt="Github Icon"></a>
+            </div>
+            <div class="col-5"></div>
+        </div>
+        <div class="row descriptor" style="display: none" id="descriptor">
             <div class="col-2"></div>
             <div class="col-8">
                 <p>Hi! Welcome to my website. I'm currently an undergraduate pursuing a
                 degree in Computer Science and Business Administration at U.C. Berkeley.</p>
-
                 <ul>
                     <li>This semester, I'm focusing on building up my portfolio
                         and learning web design.</li>
