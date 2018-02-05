@@ -10,20 +10,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("#my-name").fadeIn(1200);
-            $("#animate1").fadeIn(1200);
-            $("#animate1").click(function(){
-                $("#animate1").hide();
+
+            $("#home-nav").click(function(){
+               $.cookie('clicked', 'true', {expires: 1});
+            });
+
+            var clicked = $.cookie('')
+
+            if ($("#home-nav").data('clicked')) {
+                $("#my-name").fadeIn(0);
                 $("#my-name").animate({
                     bottom: '90px'
-                }, 1000);
+                }, 0);
                 $("#below-name").animate({
                     bottom: '90px'
-                }, 1500);
-                setTimeout(function(){$("#linkedin").fadeIn(800)}, 1300);
-                setTimeout(function(){$("#github").fadeIn(800)}, 2100);
-                setTimeout(function(){$("#descriptor").fadeIn(1200)}, 2900);
-            });
+                }, 0);
+                $("#linkedin").fadeIn(0);
+                $("#github").fadeIn(0);
+                $("#descriptor").fadeIn(0);
+            } else {
+                $("#my-name").fadeIn(1200);
+                $("#animate1").fadeIn(1200);
+                $("#animate1").click(function(){
+                    $("#animate1").hide();
+                    $("#my-name").animate({
+                        bottom: '90px'
+                    }, 1000);
+                    $("#below-name").animate({
+                        bottom: '90px'
+                    }, 1500);
+                    setTimeout(function(){$("#linkedin").fadeIn(800)}, 1300);
+                    setTimeout(function(){$("#github").fadeIn(800)}, 2100);
+                    setTimeout(function(){$("#descriptor").fadeIn(1200)}, 2900);
+                });
+            }
         });
 
     </script>
@@ -38,7 +58,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
+                    <a id="home-nav" class="nav-link" href="/index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/game.html">Game</a>
@@ -89,8 +109,8 @@
                 <p>Hi! Welcome to my website. I'm currently an undergraduate pursuing a
                 degree in Computer Science and Business Administration at U.C. Berkeley.</p>
                 <ul>
-                    <li>This semester, I'm focusing on building up my portfolio
-                        and learning web design.</li>
+                    <li>This semester, I'm focusing on building up my technical skills
+                        in order to become a full-stack developer.</li>
                     <li>Feel free to contact me at: thuang87@berkeley.edu</li>
                 </ul>
             </div>
