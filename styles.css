@@ -41,6 +41,23 @@
 	filter: alpha(opacity=30);
 }
 
+#urbanadventurerLink:link {
+    color: blue;
+}
+
+#urbanadventurerLink:visited {
+    color: red;
+}
+
+#urbanadventurerLink:hover {
+    opacity: .7;
+}
+
+#urbanadventurerLink:active {
+    opacity: .7;
+}
+
+
 /* unvisited link */
 a:link {
     color: black;
