@@ -42,19 +42,19 @@
 }
 
 #urbanadventurerLink:link {
-    color: blue;
+    color: blue !important;
 }
 
 #urbanadventurerLink:visited {
-    color: red;
+    color: red !important;
 }
 
 #urbanadventurerLink:hover {
-    opacity: .7;
+    opacity: .7 !important;
 }
 
 #urbanadventurerLink:active {
-    opacity: .7;
+    opacity: .7 !important;
 }
 
 
